@@ -26,9 +26,14 @@ DallasTemperature sensors(&oneWire);
  */
 void setup(void)
 {
+
+  
+  esp_deep_sleep_start();
+  esp_sleep_enable_timer_wakeup(2 * 1000000);
+
   // start serial port
     Serial.begin(9600);
-  Serial.println("Sleep");
+  Serial.println("Inici");
 
   // Start up the library
   sensors.begin();
